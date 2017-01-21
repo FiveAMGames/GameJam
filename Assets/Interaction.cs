@@ -17,7 +17,7 @@ public class Interaction : MonoBehaviour {
 	void Update () {
 
 
-		if (Input.GetMouseButton && onMouse && nextStep!=null) {
+		if (Input.GetMouseButtonDown(0) && onMouse && nextStep!=null) {
 			nextStep.SendMessage ("Go");
 		}
 
@@ -25,6 +25,7 @@ public class Interaction : MonoBehaviour {
 	}
 	public void OnMouseEnter(){
 		onMouse = true;
+
 	}
 	public void OnMouseExit(){
 		onMouse = false;
