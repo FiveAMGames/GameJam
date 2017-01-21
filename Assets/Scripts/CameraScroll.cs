@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraScroll : MonoBehaviour {
 
 
-	public GameObject boarders;
+	//public GameObject boarders;
 
 	public float speed = 20f;
 	private float camPosition;
