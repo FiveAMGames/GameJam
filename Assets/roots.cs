@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class roots : MonoBehaviour {
 
+	public GameObject rootsWater;
+
 	private bool checker = false;
 	// Use this for initialization
 	void Start () {
@@ -21,5 +23,9 @@ public class roots : MonoBehaviour {
 		
 			GetComponent<Animator> ().SetTrigger ("Out");
 		}
+
+	public void WaterOut(){
+		rootsWater.SetActive (true);
+	}
 
 }

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class rad : MonoBehaviour {
 
+
+	public GameObject hydrant;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -16,5 +19,6 @@ public class rad : MonoBehaviour {
 
 	public void Go(){
 		GetComponent<Animator> ().SetTrigger ("Go");
+		hydrant.SendMessage ("WorkNow");
 	}
 }

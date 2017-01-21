@@ -31,7 +31,7 @@ public class board : MonoBehaviour {
 		//endPosition = Vector3 (startPosition.x + 10f, startPosition.y, startPosition.z);
 
 		if (moveOne && !here && !ok) {
-			transform.position =Vector3.MoveTowards (position, targetOne.position, Time.deltaTime*3f);
+			transform.position =Vector3.MoveTowards (transform.position,  new Vector3(targetOne.position.x, transform.position.y, targetOne.position.z), Time.deltaTime*3f);
 			position = transform.position;
 			if (transform.position.x == targetOne.transform.position.x) {
 				here = true;
@@ -43,7 +43,8 @@ public class board : MonoBehaviour {
 
 
 		if (moveTwo && here && !loop) {
-			transform.position = Vector3.MoveTowards(position, targetTwo.position, Time.deltaTime*3f);
+			
+			transform.position = Vector3.MoveTowards(transform.position, new Vector3(targetTwo.position.x, transform.position.y, targetTwo.position.z), Time.deltaTime*3f);
 			position = transform.position;
 			if (transform.position.x == targetTwo.position.x) {
 				ok = true;
@@ -52,7 +53,7 @@ public class board : MonoBehaviour {
 			}
 		}
 		if (ok && loop) {
-			transform.position = Vector3.MoveTowards(position, loopPositions, Time.deltaTime*3f);
+			transform.position = Vector3.MoveTowards(transform.position, loopPositions, Time.deltaTime*3f);
 			position = transform.position;
 
 			if (transform.position.x == loopPositions.x) {
@@ -78,9 +79,9 @@ public class board : MonoBehaviour {
 
 		if (ok && !loop) {
 			if (transform.position.x == targetOne.position.x) {
-				loopPositions = targetTwo.position;
+				loopPositions =  new Vector3 (targetTwo.position.x, transform.position.y,targetTwo.position.z) ;
 			} else {
-				loopPositions = targetOne.position;
+				loopPositions =  new Vector3 (targetOne.position.x, transform.position.y,targetOne.position.z) ;
 			}
 			loop = true;
 		}

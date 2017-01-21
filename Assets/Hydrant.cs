@@ -6,6 +6,8 @@ public class Hydrant : MonoBehaviour {
 
 	public GameObject myWater;
 	private bool checker = false;
+
+	private bool ok = false;
 	// Use this for initialization
 	void Start () {
 		
@@ -16,11 +18,17 @@ public class Hydrant : MonoBehaviour {
 		
 	}
 	public void Go(){
-		if (!checker) {
-			checker = true;
-		} else {
-			myWater.SendMessage ("Go");
+		if (ok) {
+			if (!checker) {
+				checker = true;
+			} else {
+				myWater.SendMessage ("Go");
 
+			}
 		}
+	}
+
+	public void WorkNow(){
+		ok = true;
 	}
 }
