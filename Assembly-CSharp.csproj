@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\CameraScroll.cs" />
      <Compile Include="Assets\Scripts\Door.cs" />
      <Compile Include="Assets\Scripts\GameLogic.cs" />
+     <Compile Include="Assets\WaterFromPipe.cs" />
      <Compile Include="Assets\animateIt.cs" />
      <Compile Include="Assets\board.cs" />
      <Compile Include="Assets\rad.cs" />
