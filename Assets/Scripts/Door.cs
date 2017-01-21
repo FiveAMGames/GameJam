@@ -15,6 +15,7 @@ public class Door : MonoBehaviour {
 		
 	}
 	public void Go(){
+		Debug.Log ("Door hcan hear");
 		anim.SetTrigger ("Go");
 	}
 }

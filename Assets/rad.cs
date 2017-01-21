@@ -15,6 +15,6 @@ public class rad : MonoBehaviour {
 	}
 
 	public void Go(){
-		GetComponent<Animator> ().SetTrigger ("Twist");
+		GetComponent<Animator> ().SetTrigger ("Go");
 	}
 }

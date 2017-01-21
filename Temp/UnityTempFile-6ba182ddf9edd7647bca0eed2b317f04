@@ -92,13 +92,16 @@ Assets/FreeParallax/Scripts/FreeParallaxDemo.cs
 "Assets/Game Jam Template/Scripts/SetAudioLevels.cs"
 "Assets/Game Jam Template/Scripts/ShowPanels.cs"
 "Assets/Game Jam Template/Scripts/StartOptions.cs"
+Assets/Hydrant.cs
 Assets/Interaction.cs
 Assets/Scripts/CameraScroll.cs
 Assets/Scripts/Door.cs
 Assets/Scripts/GameLogic.cs
+Assets/WaterFromPipe.cs
 Assets/animateIt.cs
 Assets/board.cs
 Assets/rad.cs
+Assets/roots.cs
 Assets/waterHydrant.cs
 -r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Runtime.Serialization.dll"
 -r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Xml.Linq.dll"

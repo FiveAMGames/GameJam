@@ -56,6 +56,7 @@
      <Compile Include="Assets\Game Jam Template\Scripts\SetAudioLevels.cs" />
      <Compile Include="Assets\Game Jam Template\Scripts\ShowPanels.cs" />
      <Compile Include="Assets\Game Jam Template\Scripts\StartOptions.cs" />
+     <Compile Include="Assets\Hydrant.cs" />
      <Compile Include="Assets\Interaction.cs" />
      <Compile Include="Assets\Scripts\CameraScroll.cs" />
      <Compile Include="Assets\Scripts\Door.cs" />
@@ -64,6 +65,7 @@
      <Compile Include="Assets\animateIt.cs" />
      <Compile Include="Assets\board.cs" />
      <Compile Include="Assets\rad.cs" />
+     <Compile Include="Assets\roots.cs" />
      <Compile Include="Assets\waterHydrant.cs" />
      <None Include="Assets\FreeParallax\Readme.txt" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />

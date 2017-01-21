@@ -19,6 +19,7 @@ public class Interaction : MonoBehaviour {
 
 		if (Input.GetMouseButtonDown(0) && onMouse && nextStep!=null) {
 			nextStep.SendMessage ("Go");
+			Debug.Log ("Bub bub");
 		}
 
 

@@ -22,6 +22,7 @@ public class waterHydrant : MonoBehaviour {
 	}
 
 	public void RootsGrow(){
-		roots.GetComponent<Renderer> ().enabled = true;
+		roots.SetActive (true);
+		//roots.GetComponent<Renderer> ().enabled = true;
 	}
 }
