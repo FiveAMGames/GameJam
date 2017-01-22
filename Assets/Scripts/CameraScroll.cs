@@ -27,6 +27,23 @@ public class CameraScroll : MonoBehaviour {
 
 		if (Input.GetAxis ("Mouse ScrollWheel") > 0f) { // forward
 			if (!upBoarder) {
+				transform.position = new Vector3 (transform.position.x, Mathf.Lerp(transform.position.y, transform.position.y + 1f, vSpeed * 0.1f), transform.position.z);
+			}
+		}
+		if (Input.GetAxis ("Mouse ScrollWheel") < 0f) { // forward
+			if (!downBoarder) {
+				transform.position = new Vector3 (transform.position.x, Mathf.Lerp (transform.position.y, transform.position.y -1f, vSpeed * 0.1f), transform.position.z);
+			}
+
+
+
+
+
+
+
+
+			/*if (Input.GetAxis ("Mouse ScrollWheel") > 0f) { // forward
+			if (!upBoarder) {
 				transform.position = new Vector3 (transform.position.x, transform.position.y + (vSpeed * 0.1f), transform.position.z);
 			}
 		}
@@ -34,8 +51,8 @@ public class CameraScroll : MonoBehaviour {
 			if (!downBoarder) {
 				transform.position = new Vector3 (transform.position.x, transform.position.y - (vSpeed * 0.1f), transform.position.z);
 			}
+		}*/
 		}
-
 	}
 	public void OnTriggerExit(Collider coll){
 		upBoarder = false;
