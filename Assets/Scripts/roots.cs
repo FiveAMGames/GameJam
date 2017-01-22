@@ -6,10 +6,13 @@ public class roots : MonoBehaviour {
 
 	public GameObject rootsWater;
 
+
+	cat catScript;
+
 	private bool checker = false;
 	// Use this for initialization
 	void Start () {
-		
+		catScript = GameObject.Find ("cat").GetComponent<cat> ();
 	}
 	
 	// Update is called once per frame
@@ -19,10 +22,14 @@ public class roots : MonoBehaviour {
 
 
 	public void Go(){
-		Debug.Log ("Roots hear");
+
+		if (catScript.rootsTime) {
+
+			Debug.Log ("Roots aaaa");
 		
 			GetComponent<Animator> ().SetTrigger ("Out");
 		}
+	}
 
 	public void WaterOut(){
 		rootsWater.SetActive (true);

@@ -12,6 +12,9 @@ public class CameraScroll : MonoBehaviour {
 	private float vSpeed;
 	private bool cage = false;
 
+
+	public float distance;
+
 	private bool upBoarder = false;
 	private bool downBoarder = false;
 	// Use this for initialization
@@ -27,12 +30,12 @@ public class CameraScroll : MonoBehaviour {
 
 		if (Input.GetAxis ("Mouse ScrollWheel") > 0f) { // forward
 			if (!upBoarder) {
-				transform.position = new Vector3 (transform.position.x, Mathf.Lerp(transform.position.y, transform.position.y + 1f, vSpeed * 0.1f), transform.position.z);
+				transform.position = Vector3.MoveTowards (transform.position, new Vector3 (transform.position.x,transform.position.y + distance, transform.position.z), vSpeed * 0.1f);
 			}
 		}
 		if (Input.GetAxis ("Mouse ScrollWheel") < 0f) { // forward
 			if (!downBoarder) {
-				transform.position = new Vector3 (transform.position.x, Mathf.Lerp (transform.position.y, transform.position.y -1f, vSpeed * 0.1f), transform.position.z);
+				transform.position = Vector3.MoveTowards (transform.position, new Vector3 (transform.position.x,transform.position.y - distance, transform.position.z), vSpeed * 0.1f);
 			}
 
 

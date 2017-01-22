@@ -69,6 +69,8 @@
      <Compile Include="Assets\Scripts\roots.cs" />
      <Compile Include="Assets\Scripts\waterHydrant.cs" />
      <Compile Include="Assets\Scripts\waterTower.cs" />
+     <Compile Include="Assets\cat.cs" />
+     <Compile Include="Assets\doorForCat.cs" />
      <None Include="Assets\FreeParallax\Readme.txt" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />

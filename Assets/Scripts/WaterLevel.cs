@@ -22,7 +22,11 @@ public class WaterLevel : MonoBehaviour {
 
 			waterLevel.transform.position = Vector3.MoveTowards (pos, new Vector3 (waterLevel.transform.position.x, waterLevel.transform.position.y + 1.5f, waterLevel.transform.position.z), Time.deltaTime * 0.5f);
 			pos = waterLevel.transform.position;
+			if (waterLevel.transform.position == pos) {
+				GameObject.Find ("cat").SendMessage ("WaterLevelUp");
+			}
 		}
+
 	}
 
 	public void Go(){
