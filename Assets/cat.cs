@@ -8,13 +8,13 @@ public class cat : MonoBehaviour {
 	public Transform outCage;
 	public Transform onBoard;
 	public Transform rightSide;
-
+	public Transform pipeBlock;
 
 
 	private bool outCageBool = false; 
 	private bool boardOn = false;
 	private bool waterLevel = false;
-
+	private bool ladder = false;
 
 
 	board boardScript;
@@ -41,7 +41,7 @@ public class cat : MonoBehaviour {
 		}
 
 		if (boardScript.leftSide && canGo ) {
-			transform.position = Vector3.MoveTowards (position, onBoard.position, Time.deltaTime * 1f);
+			transform.position = Vector3.MoveTowards (position, onBoard.position, Time.deltaTime * 2f);
 			position = transform.position;
 
 			if (transform.position == new Vector3 (onBoard.position.x, onBoard.position.y, position.z)) {
@@ -57,7 +57,7 @@ public class cat : MonoBehaviour {
 				transform.position = onBoard.transform.position;
 			} else {
 				position = transform.position;
-				transform.position = Vector3.MoveTowards (position, rightSide.position, Time.deltaTime * 1f);
+				transform.position = Vector3.MoveTowards (position, rightSide.position, Time.deltaTime * 2f);
 
 
 				if (transform.position == new Vector3 (rightSide.position.x, rightSide.position.y, rightSide.position.z)) {
@@ -68,6 +68,10 @@ public class cat : MonoBehaviour {
 
 				}
 			}
+		}
+
+		if (ladder) {
+			transform.position = pipeBlock.position;
 		}
 
 
@@ -83,4 +87,10 @@ public class cat : MonoBehaviour {
 	public void WaterLevelUp(){
 		waterLevel = true;
 	}
+
+	public void LadderTime(){
+		ladder = true;
+	}
+
+
 }

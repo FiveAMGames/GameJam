@@ -5,7 +5,7 @@ using UnityEngine;
 public class roots : MonoBehaviour {
 
 	public GameObject rootsWater;
-
+	public GameObject ladder;
 
 	cat catScript;
 
@@ -13,6 +13,7 @@ public class roots : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		catScript = GameObject.Find ("cat").GetComponent<cat> ();
+
 	}
 	
 	// Update is called once per frame
@@ -28,6 +29,8 @@ public class roots : MonoBehaviour {
 			Debug.Log ("Roots aaaa");
 		
 			GetComponent<Animator> ().SetTrigger ("Out");
+			//GameObject.Find ("ladder").SendMessage ("Activate");
+			ladder.gameObject.GetComponent<ladder>().ok = true;
 		}
 	}
 

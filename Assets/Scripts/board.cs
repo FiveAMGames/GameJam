@@ -14,6 +14,9 @@ public class board : MonoBehaviour {
 
 	private Vector3 position;
 
+	public Transform yNew;
+	private float yy;
+
 	private float startPosition;
 	private float endPosition;
 
@@ -25,6 +28,7 @@ public class board : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		position = transform.position;
+		yy = yNew.position.y;
 	}
 	
 	// Update is called once per frame
@@ -33,8 +37,9 @@ public class board : MonoBehaviour {
 		//endPosition = Vector3 (startPosition.x + 10f, startPosition.y, startPosition.z);
 
 		if (moveOne && !here && !ok) {
-			transform.position =Vector3.MoveTowards (transform.position,  new Vector3(targetOne.position.x, transform.position.y, targetOne.position.z), Time.deltaTime*3f);
+			transform.position =Vector3.MoveTowards (transform.position,  new Vector3(targetOne.position.x, yy, targetOne.position.z), Time.deltaTime*3f);
 			position = transform.position;
+			yy = yNew.position.y;
 			if (transform.position.x == targetOne.transform.position.x) {
 				here = true;
 				position = transform.position;
@@ -55,8 +60,9 @@ public class board : MonoBehaviour {
 			}
 		}*/
 		if (moveTwo  && loop) {
-			transform.position = Vector3.MoveTowards(transform.position, loopPositions, Time.deltaTime*3f);
+			transform.position = Vector3.MoveTowards(transform.position, new Vector3(loopPositions.x, yy, loopPositions.z), Time.deltaTime*3f);
 			position = transform.position;
+			yy = yNew.position.y;
 
 			if (transform.position.x == loopPositions.x) {
 				loop = false;
@@ -95,9 +101,9 @@ public class board : MonoBehaviour {
 			leftSide = false;
 			rightSide = false;
 			if (transform.position.x == targetOne.position.x) {
-				loopPositions =  new Vector3 (targetTwo.position.x, transform.position.y,targetTwo.position.z) ;
+				loopPositions =  new Vector3 (targetTwo.position.x, yy,targetTwo.position.z) ;
 			} else {
-				loopPositions =  new Vector3 (targetOne.position.x, transform.position.y,targetOne.position.z) ;
+				loopPositions =  new Vector3 (targetOne.position.x, yy,targetOne.position.z) ;
 			}
 
 			loop = true;
