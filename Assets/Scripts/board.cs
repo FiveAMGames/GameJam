@@ -14,6 +14,8 @@ public class board : MonoBehaviour {
 
 	private Vector3 position;
 
+
+	public bool stop = true;
 	public Transform yNew;
 	private float yy;
 
@@ -97,7 +99,7 @@ public class board : MonoBehaviour {
 
 		}
 
-		if (moveTwo && !loop) {
+		if (moveTwo && !loop && !stop) {
 			leftSide = false;
 			rightSide = false;
 			if (transform.position.x == targetOne.position.x) {

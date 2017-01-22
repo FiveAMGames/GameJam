@@ -23,17 +23,22 @@ public class cat : MonoBehaviour {
 	public bool canGo = false;
 	public bool rootsTime = false;
 
+	Animator anim;
+
 	// Use this for initialization
 	void Start () {
 		boardScript = GameObject.Find ("board").GetComponent<board> ();
+		anim = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (outCageBool) {
 			canGo= false;
+			//anim.SetBool ("Walk", true);
 			transform.position = Vector3.MoveTowards (transform.position, new Vector3 (outCage.position.x, transform.position.y, transform.position.z), Time.deltaTime *1f);
 			if (transform.position.x == outCage.position.x) {
+				anim.SetBool ("Walk", false);
 				canGo = true;
 				position = transform.position;
 				outCageBool = false;
@@ -41,13 +46,16 @@ public class cat : MonoBehaviour {
 		}
 
 		if (boardScript.leftSide && canGo ) {
-			transform.position = Vector3.MoveTowards (position, onBoard.position, Time.deltaTime * 2f);
+			boardScript.stop = true;
+			transform.position = Vector3.MoveTowards (position, onBoard.position, Time.deltaTime * 5f);
 			position = transform.position;
 
 			if (transform.position == new Vector3 (onBoard.position.x, onBoard.position.y, position.z)) {
 				canGo = false;
 				boardOn = true;
 				gameObject.transform.SetParent (onBoard);
+				boardScript.stop = false;
+
 			}
 		}
 
@@ -57,7 +65,7 @@ public class cat : MonoBehaviour {
 				transform.position = onBoard.transform.position;
 			} else {
 				position = transform.position;
-				transform.position = Vector3.MoveTowards (position, rightSide.position, Time.deltaTime * 2f);
+				transform.position = Vector3.MoveTowards (position, rightSide.position, Time.deltaTime * 5f);
 
 
 				if (transform.position == new Vector3 (rightSide.position.x, rightSide.position.y, rightSide.position.z)) {
@@ -82,6 +90,7 @@ public class cat : MonoBehaviour {
 
 	public void OutCage(){
 		outCageBool = true;
+		anim.SetBool ("Walk", true);
 	}
 
 	public void WaterLevelUp(){
